@@ -1,0 +1,75 @@
+{
+  "name": "eth95",
+  "version": "0.1.2",
+  "bin": {
+    "eth95": "./dist/index.js"
+  },
+  "files": [
+    "/dist"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "rm -rf dist && yarn tsc && yarn bundle",
+    "tsc": "tsc -p . && tsc -p ./src/app",
+    "bundle": "parcel build src/app/index.html -d dist/app --no-source-maps",
+    "test": "jest",
+    "test:ci": "jest --runInBand",
+    "prepublish": "yarn build",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "chokidar": "^3.5.3",
+    "clear": "^0.1.0",
+    "commander": "^9.4.0",
+    "debug": "^4.3.4",
+    "express": "^4.18.1",
+    "figlet": "^1.5.2",
+    "parcel-bundler": "1.12.3",
+    "query-string": "^7.1.1",
+    "ws": "^8.8.1"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@types/clear": "^0.1.2",
+    "@types/express": "^4.17.13",
+    "@types/figlet": "^1.5.5",
+    "@types/jest": "^28.1.8",
+    "@types/node": "^18.7.13",
+    "@types/parcel-bundler": "^1.12.3",
+    "@types/puppeteer": "^5.4.6",
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@types/react-modal": "^3.13.1",
+    "@types/styled-components": "^5.1.26",
+    "@types/tcp-port-used": "^1.0.1",
+    "@types/ws": "^8.5.3",
+    "abi-decoder": "^2.4.0",
+    "ethers": "^5.7.0",
+    "get-port": "5.1.1",
+    "husky": "^8.0.0",
+    "jest": "^29.0.1",
+    "jest-environment-jsdom": "^29.0.1",
+    "jest-puppeteer": "^6.1.1",
+    "jest-styled-components": "^7.1.0",
+    "nodemon": "^2.0.19",
+    "puppeteer": "^16.2.0",
+    "random-words": "^1.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-modal": "^3.15.1",
+    "react-test-renderer": "^18.2.0",
+    "react95": "3.0.0",
+    "styled-components": "^5.3.5",
+    "tcp-port-used": "^1.0.2",
+    "ts-jest": "29.0.0-next.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.2",
+    "unstated-next": "^1.1.0"
+  },
+  "engines": {
+    "node": "16"
+  }
+}
